@@ -1,1 +1,4 @@
-﻿Console.WriteLine("Hello, World!");
+﻿string s = Console.ReadLine()!;
+int num = int.Parse(s);
+
+Console.WriteLine(num * num);

@@ -22,7 +22,7 @@ void printArray(int[] col)
     int count = col.Length;
     int position = 0;
     while(position < count){
-        Console.WriteLine(col[position]);
+        Console.Write($"{col[position]} ");
         position++;
     }
     Console.WriteLine();
@@ -50,5 +50,6 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
+Console.WriteLine();
 int result = findElement(array);
 Console.WriteLine(result);

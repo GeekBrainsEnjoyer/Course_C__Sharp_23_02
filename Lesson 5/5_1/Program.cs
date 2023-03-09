@@ -18,7 +18,7 @@ void printArray(int[] col)
     int count = col.Length;
     int position = 0;
     while(position < count){
-        Console.WriteLine(col[position]);
+        Console.Write($"{col[position]} ");
         position++;
     }
     Console.WriteLine();
@@ -38,6 +38,7 @@ int bot = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine("Введите верхнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
 
 fillArray(array, bot, up);
 printArray(array);

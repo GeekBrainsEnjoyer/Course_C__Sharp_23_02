@@ -25,6 +25,7 @@ void printArray(int[] col)
     }
     Console.WriteLine();
 }
+
 void sumPosNeg(int[] arr)
 {
     int pos, neg;
@@ -48,6 +49,7 @@ int bot = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine("Введите верхнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
+Console.Write();
 
 fillArray(array, bot, up);
 printArray(array);

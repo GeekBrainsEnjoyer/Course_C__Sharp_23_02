@@ -1,7 +1,11 @@
-﻿// Задача 2: Задайте массив. Напишите программу, которая
-// определяет, присутствует ли заданное число в массиве.
-// 4; массив [6, 7, 19, 345, 3] -> нет
-// 3; массив [6, 7, 19, 345, 3] -> да
+﻿// Задача 3: Задайте одномерный массив из 123 случайных чисел.
+// Найдите количество элементов массива, значения которых лежат в
+// отрезке [10,99].
+// Пример для массива из 5, а не 123 элементов. В своём решении сделайте для
+// 123
+// [5, 18, 123, 6, 2] -> 1
+// [1, 2, 3, 6, 2] -> 0
+// [10, 11, 12, 13, 14] -> 5
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -24,17 +28,15 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-void findNum(int[] mass, int num)
+int findElement(int[] mass)
 {
+    int count = 0;
     for (int i = 0; i < mass.Length; i++)
     {
-        if(mass[i] == num)
-        {
-            Console.WriteLine("Yes");
-            return;
-        }
+        if(mass[i] > 10 && mass[i] < 99)
+            count++;
     }
-    Console.WriteLine("no");
+    return count;
 }
 
 Console.WriteLine("Введите размер массива");
@@ -48,5 +50,5 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
-int num = int.Parse(Console.ReadLine()!);
-findNum(array, num);
+int result = findElement(array);
+Console.WriteLine(result);

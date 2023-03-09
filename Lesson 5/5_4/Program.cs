@@ -29,8 +29,14 @@ int[] multElements(int[] mass)
 {
     int size = mass.Length;
     int[] newMass = new int[size / 2 + size % 2];
-    for (int i = 0; i < size / 2; i++)
-        newMass[i] = mass[i] * mass[size - 1 - i];
+    for (int i = 0; i < size / 2 + 1; i++)
+        if(size % 2 == 0)
+            newMass[i] = mass[i] * mass[size - 1 - i];
+        else
+        {
+            newMass[i] = mass[i] * mass[size - 1 - i];
+            newMass[size / 2] = mass[i];
+        }
     return newMass;
 }
 
@@ -45,5 +51,6 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
+Console.WriteLine();
 int[] result = multElements(array);
 printArray(result);

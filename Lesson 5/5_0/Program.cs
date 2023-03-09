@@ -5,7 +5,7 @@
 // положительных чисел равна 29, сумма отрицательных равна
 // -20.
 
-void massNums(int[] collection, int botLine, int upLine)
+void fillArray(int[] collection, int botLine, int upLine)
 {
     int length = collection.Length;
     int index = 0;
@@ -20,11 +20,11 @@ void printArray(int[] col)
     int count = col.Length;
     int position = 0;
     while(position < count){
-        Console.WriteLine(col[position]);
+        Console.Write($"{col[position]} ");
         position++;
     }
+    Console.WriteLine();
 }
-
 void sumPosNeg(int[] arr)
 {
     int pos, neg;
@@ -37,7 +37,7 @@ void sumPosNeg(int[] arr)
         else
             neg += arr[i];
     }
-    Console.WriteLine($"Positive: {pos}, Negative: {pos}");
+    Console.WriteLine($"Positive: {pos}, Negative: {neg}");
 }
 
 Console.WriteLine("Введите размер массива");
@@ -46,9 +46,9 @@ int[] array = new int[int.Parse(Console.ReadLine()!)];
 Console.WriteLine("Введите нижнюю границу массива");
 int bot = int.Parse(Console.ReadLine()!);
 
-Console.WriteLine("Введите нижнюю гранцу массива");
+Console.WriteLine("Введите верхнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
 
-massNums(array, bot, up);
+fillArray(array, bot, up);
 printArray(array);
 sumPosNeg(array);

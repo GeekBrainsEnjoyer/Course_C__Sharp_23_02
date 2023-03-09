@@ -1,6 +1,8 @@
-﻿// Задача 3: Напишите программу, которая задаёт массив из
-// 8 элементов случайными числами и выводит их на экран.
-// Оформите заполнение массива и вывод в виде функции 
+﻿// Задача 4: Найдите произведение пар чисел в одномерном массиве.
+// Парой считаем первый и последний элемент, второй и предпоследний
+// и т.д. Результат запишите в новом массиве.
+// [1 2 3 4 5] -> 5 8 3
+// [6 7 3 6] -> 36 21
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -23,6 +25,15 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
+int[] multElements(int[] mass)
+{
+    int size = mass.Length;
+    int[] newMass = new int[size / 2 + size % 2];
+    for (int i = 0; i < size / 2; i++)
+        newMass[i] = mass[i] * mass[size - 1 - i];
+    return newMass;
+}
+
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
 
@@ -34,3 +45,5 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
+int[] result = multElements(array);
+printArray(result);

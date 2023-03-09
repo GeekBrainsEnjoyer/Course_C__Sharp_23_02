@@ -21,11 +21,15 @@ void printArray(int[] col)
         position++;
     }
 }
+
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
+
 Console.WriteLine("Введите нижнюю границу массива");
 int bot = int.Parse(Console.ReadLine()!);
+
 Console.WriteLine("Введите нижнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
+
 fillArray(array, bot, up);
 printArray(array);

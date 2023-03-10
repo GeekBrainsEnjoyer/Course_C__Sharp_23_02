@@ -34,3 +34,27 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
+
+void fillDoubleArray(double[] collection, double botLine, double upLine)
+{
+    int length = collection.Length;
+    int index = 0;
+    while (index < length){
+        collection[index] = new Random().NextDouble() * (upLine - botLine) + botLine;
+        index++;
+    }
+}
+
+void printDoubleArray(double[] col)
+{
+    int count = col.Length;
+    int position = 0;
+    while(position < count){
+        Console.Write($"{col[position]} ");
+        position++;
+    }
+    Console.WriteLine();
+}
+
+fillDoubleArray(array, bot, up);
+printDoubleArray(array);

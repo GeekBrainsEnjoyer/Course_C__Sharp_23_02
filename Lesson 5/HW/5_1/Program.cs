@@ -1,9 +1,6 @@
-﻿// Задача 1: Задайте массив из 12 элементов, заполненный
-// случайными числами из промежутка [-9, 9]. Найдите сумму
-// отрицательных и положительных элементов массива.
-// Например, в массиве [3,9,-8,1,0,-7,2,-1,8,-3,-1,6] сумма
-// положительных чисел равна 29, сумма отрицательных равна
-// -20.
+﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+// Напишите программу, которая покажет количество чётных чисел в массиве.
+// [345, 897, 568, 234] -> 2
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -26,21 +23,17 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-void sumPosNeg(int[] arr)
+int findEvenNum(int[] mass)
 {
-    int pos, neg;
-    pos = neg = 0;
-
-    for (int i = 0; i < arr.Length; i++)
+    int count = 0;
+    for (int i = 0; i < mass.Length; i++)
     {
-        if(arr[i] > 0)
-            pos += arr[i];
-        else
-            neg += arr[i];
+        if(mass[i] % 2 == 0)
+            count++;
     }
-    Console.WriteLine($"Positive: {pos}, Negative: {neg}");
+    return count;
+    
 }
-
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
 
@@ -49,8 +42,8 @@ int bot = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine("Введите верхнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
-Console.WriteLine();
 
 fillArray(array, bot, up);
 printArray(array);
-sumPosNeg(array);
+int result = findEvenNum(array);
+Console.WriteLine(result);

@@ -1,6 +1,7 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
+﻿// Задача 36: Задайте одномерный массив, заполненный случайными числами. 
+// Найдите сумму элементов, стоящих на нечётных позициях.
+// [3, 7, 23, 12] -> 19
+// [-4, -6, 89, 6] -> 0
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -23,17 +24,14 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-int findEvenNum(int[] mass)
+int sumOddElements(int[] mass)
 {
-    int count = 0;
-    for (int i = 0; i < mass.Length; i++)
-    {
-        if(mass[i] % 2 == 0)
-            count++;
-    }
-    return count;
-    
+    int sum = mass[0];
+    for (int i = 2; i < mass.Length; i += 2)
+        sum = sum + mass[i];
+    return sum;
 }
+
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
 
@@ -45,5 +43,6 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
-int result = findEvenNum(array);
+Console.WriteLine();
+int result = sumOddElements(array);
 Console.WriteLine(result);

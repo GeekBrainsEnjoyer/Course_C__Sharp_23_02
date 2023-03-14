@@ -1,6 +1,11 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
+﻿// Задача 3: Задайте одномерный массив из 123 случайных чисел.
+// Найдите количество элементов массива, значения которых лежат в
+// отрезке [10,99].
+// Пример для массива из 5, а не 123 элементов. В своём решении сделайте для
+// 123
+// [5, 18, 123, 6, 2] -> 1
+// [1, 2, 3, 6, 2] -> 0
+// [10, 11, 12, 13, 14] -> 5
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -23,17 +28,17 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-int findEvenNum(int[] mass)
+int findElement(int[] mass)
 {
     int count = 0;
     for (int i = 0; i < mass.Length; i++)
     {
-        if(mass[i] % 2 == 0)
+        if(mass[i] > 10 && mass[i] < 99)
             count++;
     }
     return count;
-    
 }
+
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
 
@@ -45,5 +50,6 @@ int up = int.Parse(Console.ReadLine()!);
 
 fillArray(array, bot, up);
 printArray(array);
-int result = findEvenNum(array);
+Console.WriteLine();
+int result = findElement(array);
 Console.WriteLine(result);

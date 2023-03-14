@@ -1,6 +1,7 @@
-﻿// Задача 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-// Напишите программу, которая покажет количество чётных чисел в массиве.
-// [345, 897, 568, 234] -> 2
+﻿// Задача 2: Задайте массив. Напишите программу, которая
+// определяет, присутствует ли заданное число в массиве.
+// 4; массив [6, 7, 19, 345, 3] -> нет
+// 3; массив [6, 7, 19, 345, 3] -> да
 
 void fillArray(int[] collection, int botLine, int upLine)
 {
@@ -23,17 +24,19 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-int findEvenNum(int[] mass)
+void findNum(int[] mass, int num)
 {
-    int count = 0;
     for (int i = 0; i < mass.Length; i++)
     {
-        if(mass[i] % 2 == 0)
-            count++;
+        if(mass[i] == num)
+        {
+            Console.WriteLine("Yes");
+            return;
+        }
     }
-    return count;
-    
+    Console.WriteLine("no");
 }
+
 Console.WriteLine("Введите размер массива");
 int[] array = new int[int.Parse(Console.ReadLine()!)];
 
@@ -42,8 +45,9 @@ int bot = int.Parse(Console.ReadLine()!);
 
 Console.WriteLine("Введите верхнюю гранцу массива");
 int up = int.Parse(Console.ReadLine()!);
+Console.WriteLine();
 
 fillArray(array, bot, up);
 printArray(array);
-int result = findEvenNum(array);
-Console.WriteLine(result);
+int num = int.Parse(Console.ReadLine()!);
+findNum(array, num);

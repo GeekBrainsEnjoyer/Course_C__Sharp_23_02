@@ -25,20 +25,11 @@ void printArray(int[] col)
     Console.WriteLine();
 }
 
-int[] turnArray(int[] mass)
+void turnArray(int[] mass)
 {
-    int length = mass.Length;
-    int[] newMass = new int[length];
-    for (int i = 0; i < mass.Length; i++)
-        if(length % 2 == 0)
-            newMass[i] = mass[length - i - 1];
-        else
-        {
-            newMass[i] = mass[length - i - 1];
-            newMass[length / 2] = mass[i / 2];
-        }
-    return newMass;
-
+    for (int i = 0; i < mass.Length / 2; i++)
+            (mass[i], mass[mass.Length - i - 1]) = (mass[mass.Length - i - 1], mass[i]);
+    
 }
 
 Console.WriteLine("Введите размер массива");
@@ -53,5 +44,5 @@ int up = int.Parse(Console.ReadLine()!);
 fillArray(array, bot, up);
 printArray(array);
 System.Console.WriteLine();
-int[] result = turnArray(array);
-printArray(result);
+turnArray(array);
+printArray(array);

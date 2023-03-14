@@ -4,51 +4,59 @@
 // 3 -> 11
 // 2 -> 10
 
-int[] createModArray(int n)
+string convertBin(int n)
 {
-    int count = 0;
-    int[] modArray = new int[100];
+    string result = "";
     for (int i = 0; n > 0; i++)
     {
-    modArray[i] = n % 2;
-    n = n / 2;
-    count++;
+        result = n % 2 + result;
+        n /= 2;
     }
-    Array.Resize(ref modArray, count);
-    return modArray;
+    return result;
 }
 
-void printArray(int[] col)
-{
-    int count = col.Length;
-    int position = 0;
-    while(position < count){
-        Console.Write($"{col[position]} ");
-        position++;
-    }
-    Console.WriteLine();
-}
+int num = int.Parse(System.Console.ReadLine()!);
+System.Console.WriteLine(convertBin(num));
 
-int[] turnArray(int[] mass)
-{
-    int length = mass.Length;
-    int[] newMass = new int[length];
-    for (int i = 0; i < mass.Length; i++)
-        if(length % 2 == 0)
-            newMass[i] = mass[length - i - 1];
-        else
-        {
-            newMass[i] = mass[length - i - 1];
-            newMass[length / 2] = mass[i / 2];
-        }
-    return newMass;
 
-}
-System.Console.WriteLine("Enter number");
-int n = int.Parse(System.Console.ReadLine()!);
-int[] result = createModArray(n);
-int[] result2 = turnArray(result);
-printArray(result2);
+// int[] createModArray(int n)
+// {
+//     int count = 0;
+//     int[] modArray = new int[100];
+//     for (int i = 0; n > 0; i++)
+//     {
+//     modArray[i] = n % 2;
+//     n = n / 2;
+//     count++;
+//     }
+//     Array.Resize(ref modArray, count);
+//     return modArray;
+// }
+
+// void printArray(int[] col)
+// {
+//     int count = col.Length;
+//     int position = 0;
+//     while(position < count){
+//         Console.Write($"{col[position]} ");
+//         position++;
+//     }
+//     Console.WriteLine();
+// }
+
+// void turnArray(int[] mass)
+// {
+//     for (int i = 0; i < mass.Length / 2; i++)
+//             (mass[i], mass[mass.Length - i - 1]) = (mass[mass.Length - i - 1], mass[i]);
+    
+// }
+
+// System.Console.WriteLine("Enter number");
+// int n = int.Parse(System.Console.ReadLine()!);
+// int[] result = createModArray(n);
+// System.Console.WriteLine();
+// turnArray(result);
+// printArray(result);
     
 
 

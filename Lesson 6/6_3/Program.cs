@@ -13,7 +13,6 @@ void giveFibonacci(int n)
         Console.Write($"{a} ");
         (a, b) = (b, b + a);
     }
-
 }
 
 System.Console.WriteLine("Enter the number");

@@ -14,7 +14,6 @@ void print2DArray(int[,] array)
     {
         for (int j = 0; j < columns; j++)
             System.Console.Write($"{array[i, j]} ");
-
         System.Console.WriteLine();
     }
 }
@@ -25,19 +24,19 @@ int[,] fill2DArray(int rows, int columns, int from, int to)
 
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++)
-           array[i, j] = new Random().Next(from, to);
-    
+            array[i, j] = new Random().Next(from, to);
+
     return array;
 }
 
 System.Console.WriteLine("Enter rows and columns");
-int ro = int.Parse(Console.ReadLine()!);
-int cl = int.Parse(Console.ReadLine()!);
+int row = int.Parse(Console.ReadLine()!);
+int col = int.Parse(Console.ReadLine()!);
 System.Console.WriteLine("Enter values from-to");
-int fr = int.Parse(Console.ReadLine()!);
+int from = int.Parse(Console.ReadLine()!);
 int to = int.Parse(Console.ReadLine()!);
 System.Console.WriteLine();
 
-int[,] matrix = fill2DArray(ro, cl, fr, to);
+int[,] matrix = fill2DArray(row, col, from, to);
 print2DArray(matrix);
 System.Console.WriteLine();

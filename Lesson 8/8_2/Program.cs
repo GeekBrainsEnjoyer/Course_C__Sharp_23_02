@@ -45,7 +45,7 @@ string transposition(bool square, int[,] array)
 
     for (int i = 0; i < rows; i++)
         for (int j = 0; j < i; j++)
-                (array[i, j], array[j, i]) = (array[j, i], array[i, j]);
+            (array[i, j], array[j, i]) = (array[j, i], array[i, j]);
 
     print2DArray(array);
     return "";

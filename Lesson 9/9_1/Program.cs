@@ -7,7 +7,7 @@ void SeriesNum(int N)
 {
     if (N == 0) return;
     SeriesNum(N - 1);
-    System.Console.WriteLine($"{N} ");
+    System.Console.Write($"{N} ");
 }
 
 int N = int.Parse(Console.ReadLine()!);
